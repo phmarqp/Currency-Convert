@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"/>
+    <title>Convert Club - phmarqp</title>
+  </head>
+  <body>
+    <img class="logo" src="assets/img/ConvertClub.png" alt="logo-convertClub" />
+    <main>
+
+      <label for="name">Converter <b>de</b>:</label>
+      <select name="convert" id="convertFrom">
+        <option value="Real">R$ Real Brasileiro</option>
+        <option value="Dolar">US$ Dólar Americano</option>
+        <option value="Btc">₿ Bitcoin</option>
+        <option value="Libra">£ Líbra</option>
+      </select>
+
+      <label for="name">Converter <b>para</b>:</label>
+      <select name="convert" id="convertTo">
+        <option value="Dolar">US$ Dólar Americano</option>
+        <option value="Real">R$ Real Brasileiro</option>
+        <option value="Btc">₿ Bitcoin</option>
+        <option value="Libra">£ Líbra</option>
+      </select>
+
+      <label class="value"><strong>Valor</strong>:
+        <input id="valueInput" type="number" placeholder="0,00"/></label>
+
+      <button class="button-convert">Converter</button>
+
+      <section class="itens">
+        <div class="coin-ConvetFrom">
+          <img class="coin-convert" src="assets/img/real.png" alt="coin-real" />
+          <label class="convertFrom">Real</label>
+          <p class="currency-value-to-convert">0,00</p>
+        </div>
+
+        <div class="arrow">
+          <img src="assets/img/arrow.png" alt="arrow-for-convert" />
+        </div>
+
+        <div class="coin-ConvertTo">
+          <img class="coin-converted" src="assets/img/dolar.png" alt="coin-dólar" />
+          <label class="convertTo">Dólar Americano</label>
+          <p class="currency-value">0,00</p>
+        </div>
+
+      </section>
+
+    </main>
+  </body>
+</html>
