@@ -46,28 +46,29 @@ async function convertValues() {
   }).format(inputCurrency); //O valor aqui está correto
 }
 
+
 function changeCurrency() {
   const currencyNameFrom = document.querySelector("label.convertFrom");
   const currencyImgFrom = document.querySelector("img.coin-convert");
   const currencyNameTo = document.querySelector(".convertTo");
   const currencyImgTo = document.querySelector(".coin-converted");
 
-  if (currencySelectFrom.value == "Dolar") {
+  if (currencySelectFrom.value == "dolar") {
     currencyNameFrom.innerHTML = "Dólar Americano";
     currencyImgFrom.src = "assets/img/dolar.png";
   }
 
-  if (currencySelectFrom.value == "Btc") {
+  if (currencySelectFrom.value == "btc") {
     currencyNameFrom.innerHTML = "Bitcoin";
     currencyImgFrom.src = "assets/img/bitcoin.png";
   }
 
-  if (currencySelectFrom.value == "Libra") {
+  if (currencySelectFrom.value == "libra") {
     currencyNameFrom.innerHTML = "Líbra";
     currencyImgFrom.src = "assets/img/libra.png";
   }
 
-  if (currencySelectFrom.value == "Real") {
+  if (currencySelectFrom.value == "real") {
     currencyNameFrom.innerHTML = "Real";
     currencyImgFrom.src = "assets/img/real.png";
   }
