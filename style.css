@@ -14,7 +14,7 @@ body {
     width: auto;
     height: 200px;
     display: block;
-    margin: 14px auto 1px auto;
+    margin: 0px auto 10px auto;
 }
 
 main {
@@ -121,7 +121,7 @@ section {
 }
 
 .arrow {
-    margin: 17px;
+    margin: 12px;
     filter: invert();
 }
 
@@ -140,7 +140,7 @@ section {
 }
 
 
-@media screen and (max-width:370px) {
+@media screen and (max-width:390px) {
     main {
         display: block;
         width: 90vw;
@@ -148,5 +148,17 @@ section {
         background-color: #202020;
         padding: 44px 24px 24px 24px;
         border-radius: 20px;
+    }
+
+    .logo {
+        height: 130px;
+    }
+
+    select, input {
+        height:40px ;
+    }
+    main {
+        margin: 0 4% 10% 5%;
+        padding: 24px 24px 24px 24px;
     }
 }

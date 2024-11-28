@@ -34,11 +34,13 @@ async function convertValues() {
   const currencyValueToConvert  = document.querySelector(".currency-value-to-convert"); // Moeda de PARA (TO)
   const currencyValueToConverted  = document.querySelector(".currency-value"); // Valor a ser convertido
 
-  const data = await fetch ("https://economia.awesomeapi.com.br/last/USD-BRL,GBP-BRL,BTC-BRL");
-
   const dolarToday = data.USDBRL.high;
   const libraToday = data.GBPBRL.high;
   const btcToday = data.BTCBRL.high;
+
+  const data = await fetch ("https://economia.awesomeapi.com.br/last/USD-BRL,GBP-BRL,BTC-BRL").then( response => response.json()); 
+
+
 
   if (currencySelectTo.value == "Dolar") {
     currencyValueToConverted .innerHTML = new Intl.NumberFormat("en-US", {
@@ -58,39 +60,16 @@ async function convertValues() {
     currencyValueToConverted .innerHTML = new Intl.NumberFormat("btc", {
       style: "currency",
       currency: "BTC",
-      minimumFractionDigits: 8, // mínimo de 8 casas decimais
-      maximumFractionDigits: 8, // máximo de 8 casas decimais
+      minimumFractionDigits: 8, // mín 8 casas decimais
+      maximumFractionDigits: 8, // máx 8 casas decimais
     }).format(inputCurrency / btcToday);
   }
 
-  if (currencySelectFrom.value == "Dolar") {
-    currencyValueToConverted .innerHTML = new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-    }).format(inputCurrency * dolarToday);
-  }
-
-  if (currencySelectFrom.value == "Libra") {
-    currencyValueToConverted .innerHTML = new Intl.NumberFormat("en-GB", {
-      style: "currency",
-      currency: "GBP",
-    }).format(inputCurrency * libraToday);
-  }
-
-  if (currencySelectFrom.value == "Btc") {
-    currencyValueToConverted .innerHTML = new Intl.NumberFormat("btc", {
-      style: "currency",
-      currency: "BTC",
-      minimumFractionDigits: 8, // mínimo de 8 casas decimais
-      maximumFractionDigits: 8, // máximo de 8 casas decimais
-    }).format(inputCurrency * btcToday);
-  }
-
-  currencyValueToConvert .innerHTML = new Intl.NumberFormat("pt-BR", {
+  currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
     //formatação da moeda
-    style: "currency", //currency=moeda
+    style: "currency", 
     currency: "BRL",
-  }).format(inputCurrency);
+  }).format(inputCurrency); //O valor aqui está correto
 }
 
 function changeCurrency() {
