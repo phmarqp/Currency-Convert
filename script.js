@@ -2,31 +2,6 @@ const buttonConvert = document.querySelector(".button-convert"); //BOTÃO PARA C
 const currencySelectFrom = document.getElementById("convertFrom"); //Converter valor DE
 const currencySelectTo = document.getElementById("convertTo"); //Converter valor PARA
 
-function checkSelectValues() {
-  const valueFrom = currencySelectFrom.value;
-  const valueTo = currencySelectTo.value;
-
-  if (valueFrom === valueTo) {
-    currencySelectTo.value = ""; // Ou você pode definir um valor padrão, como "Dolar"
-    alert("Você não pode selecionar a mesma moeda em ambos os campos.");
-  }
-
-  disableDuplicateOptions();
-}
-
-function disableDuplicateOptions() {
-  const valueFrom = currencySelectFrom.value;
-
-  for (let option of currencySelectTo.options) {
-    option.disabled = false;
-  }
-
-  for (let option of currencySelectTo.options) {
-    if (option.value === valueFrom) {
-      option.disabled = true;
-    }
-  }
-}
 
 // Função para converter os valores
 async function convertValues() {
@@ -34,13 +9,12 @@ async function convertValues() {
   const currencyValueToConvert  = document.querySelector(".currency-value-to-convert"); // Moeda de PARA (TO)
   const currencyValueToConverted  = document.querySelector(".currency-value"); // Valor a ser convertido
 
-  const dolarToday = data.USDBRL.high;
-  const libraToday = data.GBPBRL.high;
-  const btcToday = data.BTCBRL.high;
 
   const data = await fetch ("https://economia.awesomeapi.com.br/last/USD-BRL,GBP-BRL,BTC-BRL").then( response => response.json()); 
 
-
+  const dolarToday = data.USDBRL.high;
+  const libraToday = data.GBPBRL.high;
+  const btcToday = data.BTCBRL.high;
 
   if (currencySelectTo.value == "Dolar") {
     currencyValueToConverted .innerHTML = new Intl.NumberFormat("en-US", {
